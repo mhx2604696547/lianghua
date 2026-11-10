@@ -1,0 +1,381 @@
+{
+  "audit_version": 1,
+  "verified_at": "2026-11-09T10:32:26.335656+00:00",
+  "scope": "release_shape_and_calendar_overlap",
+  "visibility_mode": "reconstructed",
+  "membership_ready": false,
+  "preopen_state_verified": false,
+  "archive_sha256": "9e5d9d7386f695f5b255b4d44adb435aec410c5df4276f8db44be111deed0d35",
+  "archive_size": 927546368,
+  "audit_script_sha256": "261416d2f7e8c90a10b7a8f3c651bddc1c184bf88a1b8b1e596ece3f23cbe8a6",
+  "calendar_manifest_sha256": "e1cd29caae493d49e8d395db3aa24114a62cc7a3ad3a805ad366fa674356400a",
+  "calendar_overlap": [
+    "2021-01-01",
+    "2026-09-24"
+  ],
+  "audited_trading_sessions": 1390,
+  "missing_session_denominator": "local audited calendar between first and last returned dates per symbol",
+  "matched_archive_members": 5559,
+  "decoded_members": 5495,
+  "invalid_members": [
+    {
+      "symbol": "600001.SH",
+      "member": "raw/bars_daily/CN_SSE_600001.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600672.SH",
+      "member": "raw/bars_daily/CN_SSE_600672.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000689.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000689.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000699.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000699.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000556.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000556.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600840.SH",
+      "member": "raw/bars_daily/CN_SSE_600840.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000569.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000569.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000653.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000653.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000535.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000535.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000621.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000621.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600627.SH",
+      "member": "raw/bars_daily/CN_SSE_600627.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000675.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000675.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000956.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000956.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600709.SH",
+      "member": "raw/bars_daily/CN_SSE_600709.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000412.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000412.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000508.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000508.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600205.SH",
+      "member": "raw/bars_daily/CN_SSE_600205.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600700.SH",
+      "member": "raw/bars_daily/CN_SSE_600700.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000730.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000730.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000658.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000658.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600772.SH",
+      "member": "raw/bars_daily/CN_SSE_600772.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000827.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000827.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600762.SH",
+      "member": "raw/bars_daily/CN_SSE_600762.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600786.SH",
+      "member": "raw/bars_daily/CN_SSE_600786.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600002.SH",
+      "member": "raw/bars_daily/CN_SSE_600002.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600625.SH",
+      "member": "raw/bars_daily/CN_SSE_600625.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600669.SH",
+      "member": "raw/bars_daily/CN_SSE_600669.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600646.SH",
+      "member": "raw/bars_daily/CN_SSE_600646.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000015.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000015.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600670.SH",
+      "member": "raw/bars_daily/CN_SSE_600670.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000765.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000765.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600899.SH",
+      "member": "raw/bars_daily/CN_SSE_600899.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600852.SH",
+      "member": "raw/bars_daily/CN_SSE_600852.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000618.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000618.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000406.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000406.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600878.SH",
+      "member": "raw/bars_daily/CN_SSE_600878.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000515.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000515.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000769.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000769.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000583.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000583.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600472.SH",
+      "member": "raw/bars_daily/CN_SSE_600472.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600813.SH",
+      "member": "raw/bars_daily/CN_SSE_600813.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600065.SH",
+      "member": "raw/bars_daily/CN_SSE_600065.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000549.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000549.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000832.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000832.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000866.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000866.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600357.SH",
+      "member": "raw/bars_daily/CN_SSE_600357.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600296.SH",
+      "member": "raw/bars_daily/CN_SSE_600296.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600286.SH",
+      "member": "raw/bars_daily/CN_SSE_600286.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600632.SH",
+      "member": "raw/bars_daily/CN_SSE_600632.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000047.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000047.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000660.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000660.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600788.SH",
+      "member": "raw/bars_daily/CN_SSE_600788.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600659.SH",
+      "member": "raw/bars_daily/CN_SSE_600659.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000405.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000405.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000763.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000763.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000003.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000003.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000013.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000013.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000542.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000542.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600799.SH",
+      "member": "raw/bars_daily/CN_SSE_600799.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000817.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000817.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600752.SH",
+      "member": "raw/bars_daily/CN_SSE_600752.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "000588.SZ",
+      "member": "raw/bars_daily/CN_SZSE_000588.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600181.SH",
+      "member": "raw/bars_daily/CN_SSE_600181.parquet",
+      "error": "invalid member date"
+    },
+    {
+      "symbol": "600092.SH",
+      "member": "raw/bars_daily/CN_SSE_600092.parquet",
+      "error": "invalid member date"
+    }
+  ],
+  "total": {
+    "rows": 14496343,
+    "duplicate_dates": 0,
+    "rows_in_audited_window": 6838039,
+    "internal_missing_sessions": 0,
+    "off_calendar_dates": 0,
+    "bad_code": 0,
+    "not_unadjusted": 0,
+    "risk_warning_rows": 510143,
+    "suspended_rows": 424038,
+    "unknown_isST": 0,
+    "unknown_tradestatus": 0,
+    "active_without_positive_preclose": 0,
+    "active_invalid_ohlc": 0
+  },
+  "symbols_with_nonzero": {
+    "rows": 5495,
+    "duplicate_dates": 0,
+    "rows_in_audited_window": 5431,
+    "internal_missing_sessions": 0,
+    "off_calendar_dates": 0,
+    "bad_code": 0,
+    "not_unadjusted": 0,
+    "risk_warning_rows": 939,
+    "suspended_rows": 3418,
+    "unknown_isST": 0,
+    "unknown_tradestatus": 0,
+    "active_without_positive_preclose": 0,
+    "active_invalid_ohlc": 0
+  },
+  "direct_baostock_overlap_rows": 5,
+  "symbol_coverage_sha256": "7f547fb7e29be4b7b2583545591635591244d8f76685d93104ec71cc041d3483",
+  "public_view_version": 1,
+  "original_report_sha256": "80a10ad148f2b8aaf43198238c3674509afd585bbbbc28c0ef14e6cf83e530bf",
+  "redacted_fields": [
+    "known_samples",
+    "sina_overlap",
+    "sina_failed_queries"
+  ]
+}

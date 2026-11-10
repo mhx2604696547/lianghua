@@ -68,7 +68,10 @@
       "usage_scope": "publisher declares learning and research use",
       "adoption": "selected unadjusted daily members for reconstructed diagnostics",
       "verified_on": "2026-11-09",
-      "audit": "artifacts/w1-free-data-v0-785130b158c649418435eec67ce5e54b/source_audit.json"
+      "audit": "artifacts/w1-free-data-v0-785130b158c649418435eec67ce5e54b/source_audit.json",
+      "public_audit": "evidence/free_data_v0/source_audit.public.json",
+      "public_coverage": "evidence/free_data_v0/symbol_coverage.csv",
+      "holdout_note": "plans/HOLDOUT_STATUS.md"
     }
   ],
   "excluded": [

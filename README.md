@@ -144,6 +144,8 @@ $archiveCut = 'ccc941b38cb26deb432e56d2f5004138ba3c557396fd4052c4680521ab01cacf'
 
 当前用途为 `reconstructed` 历史诊断。决策和评价只读取早于截止日的完整日线。锦州港 2025-07-24 的停牌记录仍带正的开盘字段，开盘成交仍需单独的状态和价格限制证据。本轮 50 项测试通过，五个归档状态场景及原有时点场景重放通过。 [上交所摘牌公告](https://www.sse.com.cn/disclosure/announcement/listing/stock/c/c_20250718_10785880.shtml) · [回放验证](artifacts/runs/free-data-v0-review-5db2e7c217ad4b4d8240eb5bbfd41a71/run.json)
 
+归档的全包审计脚本、逐票覆盖和删去逐行行情的回执现已固定到[仓库证据目录](evidence/free_data_v0/README.md)。本机重算原始包与覆盖表哈希一致；5,495 个可解码分片中，审核窗口内按各分片首末日计算的内部缺失交易日为 0，但停牌占位、历史股票池和盘后/盘前可见性仍分别待核验。这个覆盖数字不能解释为可交易股票数。原审计接触了市场候选配置的 2026 年留出行情，该区间已[失去独立留出资格](plans/HOLDOUT_STATUS.md)。
+
 贵州茅台 2026-06-26 除息的参考昨收为 1,184.08 元，上一交易日收盘为 1,212.10 元。用上一交易日收盘价减去公告中的每股现金红利，四舍五入至分，得到归档中的参考价。公司行为入账仍待验收。 [分红公告](https://www.moutaichina.com/mtgf/attachDir/2026/06/2026062214215259014.pdf) · [样本对账](artifacts/w1-free-data-v0-785130b158c649418435eec67ce5e54b/maotai_reference_control.json)
 
 ## 盘前检查与历史价格限制
