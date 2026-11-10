@@ -35,7 +35,7 @@
       "reviewed_commit": "bb372c60c6a80767a05b87b84bd49bb25310eb28",
       "license": "MIT",
       "distribution": "akshare==1.18.64",
-      "reuse": "optional SDK dependency: original Sina dividend and exchange roster fields",
+      "reuse": "optional SDK dependency: original Sina dividend and exchange roster fields; URL template and decoder for isolated L0 daily-source observation",
       "source": "https://github.com/akfamily/akshare/blob/bb372c60c6a80767a05b87b84bd49bb25310eb28/akshare/stock/issue/stock_finance_sina.py",
       "roster_runtime_review": {
         "checked_at_date_shanghai": "2026-11-09",
@@ -43,6 +43,14 @@
         "installed_module_sha256": "d3288903d1e8ce7796e051bfbe651cb15aad0b29d4043277b04984f3cec72892",
         "operations": ["stock_info_sh_name_code", "stock_info_sh_delist", "stock_info_sz_name_code", "stock_info_sz_delist"],
         "scope": "SDK-value capture only; date labels and historical membership are not qualified"
+      },
+      "sina_daily_probe_runtime_review": {
+        "checked_at_date_shanghai": "2026-11-10",
+        "installed_module": "akshare/stock/cons.py",
+        "installed_module_sha256": "89600a5738e0f6f1a58b23edec409e0c1e3892fe18418eeafa015de674ec6f8b",
+        "url_template": "https://finance.sina.com.cn/realstock/company/{}/hisdata_klc2/klc_kl.js",
+        "decoder": "hk_js_decode with mini_racer; raw HTTP body archived before decoding",
+        "scope": "L0 source observation only; symbol identity comes from the requested URL and same-day L1 visibility is not authorized"
       },
       "caveat": "current source reviewed; runtime package is pinned independently; dataset remains raw and not ledger-ready"
     }

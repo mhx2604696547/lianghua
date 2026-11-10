@@ -11,6 +11,7 @@
 | BaoStock 登录、错误检查与结果转换 | a-stock-data，固定提交，Apache-2.0 | src/ashare_research/_vendor/astock_baostock.py |
 | 日线、历史 ST/停牌字段、证券主表、日历 | BaoStock 0.9.4 SDK | sources.fetch_baostock |
 | 新浪分红历史 | AKShare 1.18.64 SDK | sources.fetch_sina_actions |
+| 新浪日线实时时钟观察 | AKShare 1.18.64 的端点模板与解码器；直接留存 HTTP 响应 | sina_close_probe.probe，仅 L0 |
 | 沪深交易所上市和终止上市名录 | AKShare 1.18.64 SDK，保留原始字段 | sources.fetch_exchange_roster |
 | 账户、订单、费用、T+1、结果统计 | AKQuant 0.3.82，MIT | engine.run_open_proxy |
 | 原始结果留存与时点读取 | 本项目的必要适配 | snapshots.freeze / pit.DailyPIT |
@@ -77,9 +78,12 @@ SDK 请求在有超时的独立子进程中运行，固定来源，失败不自�
 ~~~powershell
 $env:PYTHONPATH = 'D:\lianghua\src'
 .\.venv\Scripts\python.exe -m ashare_research.close_probe --symbol 600519.SH --session 2026-11-10 --timeout 20
+.\.venv\Scripts\python.exe -m ashare_research.sina_close_probe --symbol 600519.SH --session 2026-11-10 --timeout 15
 ~~~
 
-每次尝试独立保存请求、完成时间和失败原因；仅目标日期与证券的唯一一行通过检查时另存 SDK 返回值及哈希，并标 `target_row_observed=true`。回执始终将 `same_day_l1_authorized`、`historical_visibility_proven` 和 `source_response_finalized` 标为 `false`，不会生成 L1 数据清单。单次成功只说明**这次观察时**源返回了该行；要核验盘后截止，还须在多个日期、截止前后比较返回版本与源完成状态。[2026-11-10 两次观察](evidence/close_observations/2026-11-10.md)均超时，尚无同日可见性证据。本轮完整测试 78 项通过，只验证现有工程契约，不表示市场策略已经合格。
+每次尝试独立保存请求、完成时间和失败原因。BaoStock 仅目标日期与证券的唯一一行通过检查时另存 SDK 返回值及哈希，并标 `target_row_observed=true`。新浪探针先存原始 HTTP 响应与哈希，再解码日期；证券身份仅由请求端点给出，`target_date_row_observed` 只表示响应中出现了目标日期。两者都将 `same_day_l1_authorized`、`historical_visibility_proven` 和 `source_response_finalized` 标为 `false`，不会生成 L1 数据清单。要核验盘后截止，还须在多个日期、截止前后比较返回版本与源完成状态。[2026-11-10 来源观察](evidence/close_observations/2026-11-10.md)：BaoStock 两次超时，新浪 15:21 的响应最新日为前一交易日；尚无同日可见性证据。
+
+2026-11-10 完整测试套件 92 项通过；这些测试验证工程契约，不能证明市场回测或策略有效。
 
 交易所名录支持 `sse_listed_raw`、`sse_delisted_raw`、`szse_listed_raw`、`szse_delisted_raw` 四种固定取数操作。采集结果记录端点、参数、SDK 版本、重复代码数和不合口径的代码数。名录不能直接替代日线、ST/停牌事件或历史股票池。
 
