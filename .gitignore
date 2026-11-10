@@ -1,0 +1,14 @@
+.venv/
+.cache/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+artifacts/
+build/
+.env
+.env.*
+!.env.example
+.dsh/
+*.pem
+*.key
+

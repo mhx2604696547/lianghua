@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-11-07",
+  "scope": "engineering integration; not market-performance validation",
+  "repositories": [
+    {
+      "name": "simonlin1212/a-stock-data",
+      "reviewed_commit": "f21534946c42be3ad048ac938eecb1bad84cb8ab",
+      "license": "Apache-2.0",
+      "reuse": "vendored two BaoStock helper functions; module packaging only",
+      "source": "https://github.com/simonlin1212/a-stock-data/blob/f21534946c42be3ad048ac938eecb1bad84cb8ab/SKILL.md#L3955-L4034",
+      "vendored_path": "src/ashare_research/_vendor/astock_baostock.py",
+      "source_blob_sha": "907deb00f05365e0445d6d95294c3c98d5a4a8fe",
+      "license_path": "src/ashare_research/_vendor/a-stock-data.LICENSE"
+    },
+    {
+      "name": "akfamily/akquant",
+      "reviewed_commit": "162e56f0da0167e15d5fe3c9a16204d13269e218",
+      "license": "MIT",
+      "distribution": "akquant==0.3.82",
+      "reuse": "dependency: orders/accounting/fees/T+1/results; no Rust engine copy",
+      "source": "https://github.com/akfamily/akquant/tree/162e56f0da0167e15d5fe3c9a16204d13269e218",
+      "reviewed_files": [
+        "src/execution/common.rs",
+        "src/market/corporate_action.rs",
+        "examples/52_pre_open_demo.py",
+        "tests/test_t_plus_one.py",
+        "tests/test_volume_limit.py",
+        "tests/test_boundary_bar_fill.py"
+      ],
+      "caveat": "reviewed source commit and installed PyPI distribution are identified separately; no asserted reproducible-build equivalence"
+    },
+    {
+      "name": "akfamily/akshare",
+      "reviewed_commit": "bb372c60c6a80767a05b87b84bd49bb25310eb28",
+      "license": "MIT",
+      "distribution": "akshare==1.18.64",
+      "reuse": "optional SDK dependency: original Sina dividend and exchange roster fields",
+      "source": "https://github.com/akfamily/akshare/blob/bb372c60c6a80767a05b87b84bd49bb25310eb28/akshare/stock/issue/stock_finance_sina.py",
+      "roster_runtime_review": {
+        "checked_at_date_shanghai": "2026-11-09",
+        "installed_module": "akshare/stock/stock_info.py",
+        "installed_module_sha256": "d3288903d1e8ce7796e051bfbe651cb15aad0b29d4043277b04984f3cec72892",
+        "operations": ["stock_info_sh_name_code", "stock_info_sh_delist", "stock_info_sz_name_code", "stock_info_sz_delist"],
+        "scope": "SDK-value capture only; date labels and historical membership are not qualified"
+      },
+      "caveat": "current source reviewed; runtime package is pinned independently; dataset remains raw and not ledger-ready"
+    }
+  ],
+  "other_dependencies": [
+    {
+      "name": "baostock",
+      "distribution": "baostock==0.9.4",
+      "license_as_declared": "BSD License",
+      "source": "https://pypi.org/project/baostock/0.9.4/"
+    }
+  ],
+  "data_releases": [
+    {
+      "repository": "noblechang/a-share-data",
+      "release_tag": "FREE_DATA_v0",
+      "publisher_commit_abbrev": "7a8d083",
+      "asset": "a-share-raw-v0.tar",
+      "asset_sha256": "9e5d9d7386f695f5b255b4d44adb435aec410c5df4276f8db44be111deed0d35",
+      "release_url": "https://github.com/noblechang/a-share-data/releases/tag/FREE_DATA_v0",
+      "provider": "baostock",
+      "capture_level": "publisher_parquet",
+      "usage_scope": "publisher declares learning and research use",
+      "adoption": "selected unadjusted daily members for reconstructed diagnostics",
+      "verified_on": "2026-11-09",
+      "audit": "artifacts/w1-free-data-v0-785130b158c649418435eec67ce5e54b/source_audit.json"
+    }
+  ],
+  "excluded": [
+    {
+      "name": "ricequant/rqalpha",
+      "reason": "additional non-commercial-use restrictions; not copied or installed",
+      "license": "https://github.com/ricequant/rqalpha/blob/master/LICENSE"
+    }
+  ]
+}
+

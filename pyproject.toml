@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ashare-research-reuse"
+version = "0.1.0"
+description = "Source adapters and an AKQuant integration spike for A-share research"
+requires-python = ">=3.13"
+dependencies = ["akquant==0.3.82", "baostock==0.9.4", "polars[rtcompat]==2.1.0"]
+
+[project.optional-dependencies]
+sources = ["akshare==1.18.64"]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+ashare-research = "ashare_research.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"ashare_research._vendor" = ["*.LICENSE"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+

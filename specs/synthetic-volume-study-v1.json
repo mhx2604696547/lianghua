@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "study": "synthetic-volume-study-v1",
+  "profile": "synthetic",
+  "hypothesis": "在相同开仓机会日，放量上涨规则选出的股票能否比同池固定种子对照获得更高的期末净值？",
+  "strategy": "volume_confirmed_close_up_v1",
+  "visibility": "reconstructed",
+  "universe": "sse_szse_main_a_ex_st",
+  "symbols": ["600000.SH", "600519.SH", "000001.SZ"],
+  "min_listed_sessions": 60,
+  "history_start": "2026-07-01",
+  "partitions": {
+    "development": ["2026-08-03", "2026-08-21"],
+    "validation": ["2026-08-24", "2026-09-04"],
+    "holdout": ["2026-09-07", "2026-09-18"]
+  },
+  "cutoff": "18:00:00",
+  "lookback": 20,
+  "min_return_bp": 200,
+  "min_volume_multiple": "1.50",
+  "holding_choices": [1, 2, 3, 4, 5],
+  "entry_limit_buffer_bp": 500,
+  "initial_cash_cny": "100000.00",
+  "order_lot_shares": 100,
+  "fee_scenario": {
+    "commission_rate": "0.0003",
+    "min_commission": "5.00",
+    "stamp_tax_rate": "0.0005",
+    "transfer_fee_rate": "0.00001"
+  },
+  "control": {"name": "opportunity_matched_eligible_v1", "seed": 1729},
+  "metric": {"name": "terminal_net_excess_bp", "min_qualifying_sessions": 4, "min_net_excess_bp": 5},
+  "assumptions": [
+    "标的仅是合成序列的标识。资格由样例预先声明。价格、日历、盘前状态和费率均为工程情景。",
+    "样例日线在 17:30 完成，18:00 决策。盘前按 09:00 的合成状态和参考昨收计算 10% 的价格限制。开盘价格用于代理撮合。",
+    "每个触发日最多一笔模拟买入，两条独立账户路径可保留重叠持仓，均按限价和费用预留现金。持有期从实际买入开始计交易日。",
+    "开发和验证分别从空仓开始。计划退出越过该分区末日的信号不启动，留出区间保持封存。"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "study": "mainboard-volume-candidate-v1",
+  "profile": "market_candidate",
+  "hypothesis": "在相同开仓机会日，放量上涨规则选出的股票能否比同池固定种子对照获得更高的期末净值？",
+  "strategy": "volume_confirmed_close_up_v1",
+  "visibility": "reconstructed",
+  "universe": "sse_szse_main_a_ex_st",
+  "symbols": ["600519.SH", "600190.SH", "000976.SZ"],
+  "min_listed_sessions": 60,
+  "history_start": "2023-04-10",
+  "partitions": {
+    "development": ["2023-06-01", "2024-12-31"],
+    "validation": ["2025-01-02", "2025-12-31"],
+    "holdout": ["2026-01-05", "2026-09-24"]
+  },
+  "cutoff": "18:00:00",
+  "lookback": 20,
+  "min_return_bp": 200,
+  "min_volume_multiple": "1.50",
+  "holding_choices": [1, 2, 3, 4, 5],
+  "entry_limit_buffer_bp": 500,
+  "initial_cash_cny": "100000.00",
+  "order_lot_shares": 100,
+  "fee_scenario": {
+    "commission_rate": "0.0003",
+    "min_commission": "5.00",
+    "stamp_tax_rate": "0.0005",
+    "transfer_fee_rate": "0.00001"
+  },
+  "control": {"name": "opportunity_matched_eligible_v1", "seed": 1729},
+  "metric": {"name": "terminal_net_excess_bp", "min_qualifying_sessions": 30, "min_net_excess_bp": 5},
+  "assumptions": [
+    "当前标的是证据探针。正式股票池需逐日重建沪深主板，计入后来退市的证券，并按当日信息排除 ST 和上市未满约定交易日的股票。",
+    "上市日龄、持有期计数、资金、成本、日期和评价门槛是待验证的研究情景。成本须按历史有效区间核验。",
+    "决策需要同日完成日线，提交前需要可交易状态与价格限制。市场账户执行和公司行为须单独验收。",
+    "留出区间保持封存。证据不足时输出诊断。"
+  ]
+}
