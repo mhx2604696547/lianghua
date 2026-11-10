@@ -72,6 +72,15 @@ SDK 请求在有超时的独立子进程中运行，固定来源，失败不自�
 
 每次抓取创建新的目录，保存 raw.csv（SDK 原始字段值）、data.parquet 和最后原子发布的 manifest.json。这里的“原始”指 SDK 返回值，并非交易所报文或 HTTP 原始响应。历史回填统一标 reconstructed；fetched_at 不是历史 available_at。
 
+要观察某一天日线在实际时钟下能否取得，使用仅属于 L0 的来源探针：
+
+~~~powershell
+$env:PYTHONPATH = 'D:\lianghua\src'
+.\.venv\Scripts\python.exe -m ashare_research.close_probe --symbol 600519.SH --session 2026-11-10 --timeout 20
+~~~
+
+每次尝试独立保存请求、完成时间和失败原因；仅目标日期与证券的唯一一行通过检查时另存 SDK 返回值及哈希，并标 `target_row_observed=true`。回执始终将 `same_day_l1_authorized`、`historical_visibility_proven` 和 `source_response_finalized` 标为 `false`，不会生成 L1 数据清单。单次成功只说明**这次观察时**源返回了该行；要核验盘后截止，还须在多个日期、截止前后比较返回版本与源完成状态。[2026-11-10 两次观察](evidence/close_observations/2026-11-10.md)均超时，尚无同日可见性证据。本轮完整测试 78 项通过，只验证现有工程契约，不表示市场策略已经合格。
+
 交易所名录支持 `sse_listed_raw`、`sse_delisted_raw`、`szse_listed_raw`、`szse_delisted_raw` 四种固定取数操作。采集结果记录端点、参数、SDK 版本、重复代码数和不合口径的代码数。名录不能直接替代日线、ST/停牌事件或历史股票池。
 
 ## 用已归档快照诊断时点
